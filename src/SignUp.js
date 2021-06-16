@@ -1,17 +1,13 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import "./App.css";
+import { Button, TextField } from "@material-ui/core";
+import { useFormControls } from "./SignUpFormControls";
 
 const userTypes = [
   {
@@ -29,52 +25,54 @@ const userTypes = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+  formText: {
+    justifyItems: "left",
+  },
+  headerText: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
+    width: "100%", 
+    marginTop: theme.spacing(6),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(5, 0, 5, 0),
   },
 }));
 
 function SignUp() {
   const classes = useStyles();
-  const [userType, setUserType] = React.useState(
-    "I would describe my user type as"
-  );
-
-  const handleChange = (event) => {
-    setUserType(event.target.value);
-  };
+  const { handleInputValue, handleFormSubmit, formIsValid, errors, values } =
+    useFormControls();
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography variant="h4">Let's set up your account</Typography>
-        <Typography variant="p">
-          Already have an account?
-          <Link href="/signin"> Sign in</Link>
-        </Typography>
+      <div>
+        <div className={classes.formText}>
+          <Box fontWeight="fontWeightBold">
+            <Typography variant="h4" className={classes.headerText}>
+              Let's set up your account
+            </Typography>
+          </Box>
+          <Typography variant="p" className={classes.headerText}>
+            Already have an account?
+            <Link href="/signin"> Sign in</Link>
+          </Typography>
+        </div>
 
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="fullName"
+                id="name"
                 label="Your name"
-                name="fullName"
+                name="name"
                 autoComplete="name"
+                onChange={handleInputValue}
                 autoFocus
               />
             </Grid>
@@ -88,6 +86,11 @@ function SignUp() {
                 label="Email address"
                 name="email"
                 autoComplete="email"
+                onChange={handleInputValue}
+                {...(errors["email"] && {
+                  error: true,
+                  helperText: errors["email"],
+                })}
               />
             </Grid>
             <Grid item xs={12}>
@@ -97,12 +100,10 @@ function SignUp() {
                 required
                 fullWidth
                 id="userType"
-                value={userType}
-                onChange={handleChange}
+                label="I would describe my user type as:"
+                value={values.userType ? values.userType : ""}
+                onChange={handleInputValue}
               >
-                <MenuItem value="">
-                  <em>I would describe my user type as</em>
-                </MenuItem>
                 {userTypes.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
                     {option.label}
@@ -121,6 +122,7 @@ function SignUp() {
                 id="password"
                 autoComplete="current-password"
                 helperText="Minimum 8 characters"
+                onChange={handleInputValue}
               />
             </Grid>
           </Grid>
@@ -130,11 +132,13 @@ function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onSubmit={handleFormSubmit}
+            disabled={!formIsValid()}
           >
             Next
           </Button>
-          <Grid container justify="flex-start">
-            <Typography variant="p">
+          <Grid container className={classes.formText}>
+            <Typography variant="body1">
               By clicking the "Next" button, you agree to creating a free
               account, and to
               <Link href="/terms"> Terms of Service</Link> and

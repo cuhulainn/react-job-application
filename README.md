@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# Connor's Submission
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created to submit a job application for a front end developer role with an awesome company. I was unable to commit enough time to implement the 'step 1 of 3' and the fixed aspect ratio, but I believe I got everything else. I look forward to the opportunity to continue this process and hopefully join your team, if we both see a good fit!
 
-## Available Scripts
+## Questions from task sheet
 
-In the project directory, you can run:
+- What would you use to make an app/site pass WAI Test?
 
-### `yarn start`
+  - I would review the w3 guide found here: https://www.w3.org/WAI/test-evaluate/tools/selecting/ and then filter accompanying list of tools to determine what tools were most appropriate for the project I was working on, based on regions/languages/technologies used.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Which processes would you use to optimize a React App for speed and performance?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - Create a minified production build of the app, then utilize the React DevTools Profiler to locate Components that have high load times or are causing too many re-renders, etc. I would also review the code for opportunities to virtualize lists, and remove unneeded updates to state or props that can slow things down.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- What was the most significant project you ever worked on with React? What was your job/role? Describe what tools and app architecture was used on that project. If possible, share a public repo where we can check
+  - The most significant project I've worked on to date is a side project for a startup. I'm the lead front end developer, responsible for all the design and functionality of the front end. The app pulls data from relational databases via APIs written in Node/Express all hosted on AWS. The UX requires guiding the user through a series of questions to make a product suggestion. The front end will eventually connect with external API's to fetch data about product availability and eventually allow for online product purchase. I don't have a public repo I can share for it at this time, nor a link as we've not yet publically launched.

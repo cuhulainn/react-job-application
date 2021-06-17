@@ -2,6 +2,8 @@
 
 This project was created to submit a job application for a front end developer role with an awesome company. I was unable to commit enough time to implement the 'step 1 of 3' and the fixed aspect ratio, but I believe I got everything else. I look forward to the opportunity to continue this process and hopefully join your team, if we both see a good fit!
 
+Here's the mockup I was implementing: https://projects.invisionapp.com/share/K7V8HV6Q9HM#/screens/397486263
+
 ## Questions from task sheet
 
 - What would you use to make an app/site pass WAI Test?

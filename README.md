@@ -1,4 +1,4 @@
-# Connor's Submission
+# Cuhulainn's Submission
 
 This project was created to submit a job application for a front end developer role with an awesome company. I was unable to commit enough time to implement the 'step 1 of 3' and the fixed aspect ratio, but I believe I got everything else. I look forward to the opportunity to continue this process and hopefully join your team, if we both see a good fit!
 
